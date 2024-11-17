@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RECORD</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>UserName</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>PhoneNo</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {%for logins in loginss %}
+        <tr>
+          <td>{{logins.Username}}</td>
+          <td>{{logins.Email}}</td>
+          <td>{{logins.Password}}</td>
+          <td>{{logins.PhoneNo}}</td>
+
+          <td>
+            <a href="/edit/{{logins.PhoneNo}}/">Edit</a>
+            <a href="/delete/{{logins.PhoneNo}}/">Delete</a>
+          </td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+    <br /><br />
+    <button><a href="/add/">Add New Record</a></button>
+  </body>
+</html>
